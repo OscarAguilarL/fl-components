@@ -13,7 +13,14 @@ class HomeScreen extends StatelessWidget {
         body: ListView.separated(
             itemBuilder: (context, index) => ListTile(
                   leading: const Icon(Icons.access_time_outlined),
-                  onTap: () {},
+                  onTap: () {
+                    // final route = MaterialPageRoute(
+                    //     builder: (context) => const ListView1Screen());
+
+                    // Navigator.push(context, route);
+
+                    Navigator.pushNamed(context, 'card');
+                  },
                   title: const Text('Nombre de la ruta'),
                 ),
             separatorBuilder: (__, ___) => const Divider(),
