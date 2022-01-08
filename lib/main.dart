@@ -16,6 +16,14 @@ class MyApp extends StatelessWidget {
       initialRoute: AppRoutes.intialRoute,
       routes: AppRoutes.getAppRoutes(),
       onGenerateRoute: AppRoutes.onGeneratedRoute,
+      theme: ThemeData.light().copyWith(
+        // Color primario
+        primaryColor: Colors.indigo,
+        appBarTheme: const AppBarTheme(
+          color: Colors.red,
+          elevation: 0,
+        ),
+      ),
     );
   }
 }
