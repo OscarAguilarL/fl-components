@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Material App',
       // home: const ListView2Screen(),
       initialRoute: AppRoutes.intialRoute,
-      routes: AppRoutes.routes,
+      routes: AppRoutes.getAppRoutes(),
       onGenerateRoute: AppRoutes.onGeneratedRoute,
     );
   }
