@@ -10,8 +10,25 @@ class AppTheme {
       color: primary,
       elevation: 0,
     ),
+
+    // TextButtonTheme
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(primary: primary),
+    ),
+
+    // Floating Action Buttons
+    floatingActionButtonTheme: const FloatingActionButtonThemeData(
+      backgroundColor: primary,
+      elevation: 5,
+    ),
+
+    // elevatedButtonTheme
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        primary: primary,
+        shape: const StadiumBorder(),
+        elevation: 0,
+      ),
     ),
   );
 
