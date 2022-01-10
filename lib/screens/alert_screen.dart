@@ -1,9 +1,12 @@
+import 'dart:io';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AlertScreen extends StatelessWidget {
   const AlertScreen({Key? key}) : super(key: key);
 
-  void displayDialog(BuildContext context) {
+  void displayDialogAndroid(BuildContext context) {
     showDialog(
       barrierDismissible: false,
       context: context,
@@ -25,6 +28,40 @@ class AlertScreen extends StatelessWidget {
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
+              child: const Text('OK'),
+            ),
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text('Cancelar'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void displayDialogIOS(BuildContext context) {
+    showCupertinoDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) {
+        return CupertinoAlertDialog(
+          title: const Text('Hola mundo'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: const [
+              Text('Este es el contenido de la alerta'),
+              SizedBox(height: 20),
+              FlutterLogo(size: 100),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text('OK'),
+            ),
+            TextButton(
+              onPressed: () => Navigator.pop(context),
               child: const Text('Cancelar'),
             ),
           ],
@@ -42,7 +79,10 @@ class AlertScreen extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
             child: Text('Mostrar Alerta', style: TextStyle(fontSize: 20)),
           ),
-          onPressed: () => displayDialog(context),
+          // onPressed: () => displayDialogAndroid(context),
+          onPressed: () => Platform.isAndroid
+              ? displayDialogAndroid(context)
+              : displayDialogIOS(context),
         ),
       ),
       floatingActionButton: FloatingActionButton(
