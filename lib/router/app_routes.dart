@@ -7,19 +7,49 @@ class AppRoutes {
 
   static final menuOptions = <MenuOption>[
     // todo: borrar home
-    MenuOption(route: 'home', nombre: 'Home Screen', screen: const HomeScreen(), icon: Icons.home),
-    MenuOption(route: 'listview1', nombre: 'List View Tipo 1', screen: const ListView1Screen(), icon: Icons.list_alt_outlined),
-    MenuOption(route: 'listview2', nombre: 'List View Tipo 2', screen: const ListView2Screen(), icon: Icons.list_sharp),
-    MenuOption(route: 'alert', nombre: 'Alertas', screen: const AlertScreen(), icon: Icons.notification_add),
-    MenuOption(route: 'card', nombre: 'Tarjetas - Cards', screen: const CardScreen(), icon: Icons.card_membership),
+    MenuOption(
+      route: 'home',
+      nombre: 'Home Screen',
+      screen: const HomeScreen(),
+      icon: Icons.home,
+    ),
+    MenuOption(
+      route: 'listview1',
+      nombre: 'List View Tipo 1',
+      screen: const ListView1Screen(),
+      icon: Icons.list_alt_outlined,
+    ),
+    MenuOption(
+      route: 'listview2',
+      nombre: 'List View Tipo 2',
+      screen: const ListView2Screen(),
+      icon: Icons.list_sharp,
+    ),
+    MenuOption(
+      route: 'alert',
+      nombre: 'Alertas',
+      screen: const AlertScreen(),
+      icon: Icons.notification_add,
+    ),
+    MenuOption(
+      route: 'card',
+      nombre: 'Tarjetas - Cards',
+      screen: const CardScreen(),
+      icon: Icons.card_membership,
+    ),
+    MenuOption(
+      route: 'avatar',
+      nombre: 'Circle Avatar',
+      screen: const AvatarScreen(),
+      icon: Icons.supervisor_account_rounded,
+    ),
   ];
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
-
     Map<String, Widget Function(BuildContext)> appRoutes = {};
 
     for (final option in menuOptions) {
-      appRoutes.addAll({ option.route: (BuildContext context) => option.screen });
+      appRoutes.addAll({option.route: (BuildContext context) => option.screen});
     }
 
     return appRoutes;
