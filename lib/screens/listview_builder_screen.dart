@@ -70,6 +70,10 @@ class _ListViewScreenState extends State<ListViewScreen> {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => Navigator.pop(context),
+        child: const Icon(Icons.close),
+      ),
       body: MediaQuery.removePadding(
         context: context,
         removeTop: true,
